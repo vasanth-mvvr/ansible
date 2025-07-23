@@ -13,4 +13,8 @@
       
     - name: creating if the user not exists 
       ansible.builtin.command: useradd expense
-      when: USER.rc != 0 #condition 
+      when: USER.rc != 0 #condition
+
+    - name: hello 
+      ansible.builtin.debug:
+        msg: "hello" 
