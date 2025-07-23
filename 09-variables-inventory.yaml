@@ -1,0 +1,6 @@
+- name: variables from inventory
+  hosts: localhost
+  tasks: 
+    - name: read information
+      ansible.builtin.debug:
+        msg: "The {{script}} is from the inventory {{variable}}"
