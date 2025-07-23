@@ -1,0 +1,17 @@
+- name: datatypes in yaml
+  hosts: localhost
+  vars:
+    course: DevOps -- Devlopment and operations #string 
+    tools: #list
+    - linux
+    - aws
+    - shell
+    experience: #map
+      DevOps: 1 #number
+      aws: 1
+      docker: 1
+      project: true #boolean
+  tasks:
+    - name: print datatypes
+      ansible.builtin.debug:
+        msg: "The {{course}}, tools are {{tools}} and experience is {{experience}} and project is {{project}}"

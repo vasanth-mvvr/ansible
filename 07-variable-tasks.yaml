@@ -1,0 +1,14 @@
+- name: Variables from tasks
+  hosts: web
+  vars: 
+    script: script
+    variable: variables
+  tasks:
+    - name: This is used for variables
+      ansible.builtin.debug:
+        msg: "This is the yaml {{script}} for the {{variable}}."
+    - name: The variable reffered from task
+      vars:
+        script: task script
+      ansible.builtin.debug:
+        msg: "This is the yaml {{script}} for the {{variable}}."

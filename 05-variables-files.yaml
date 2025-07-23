@@ -1,0 +1,8 @@
+- name: Variables from files
+  hosts: web
+  vars_files:
+  - 06-variables-list.yaml
+  tasks:
+    - name: The variables that will refer from the different file.
+      ansible.builtin.debug:
+        msg: "The {{variable}} from the {{script}}  can be reffered to different {{file}}"

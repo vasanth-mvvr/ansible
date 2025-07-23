@@ -1,0 +1,7 @@
+- name: variables from arguments need to enable at the last -e and give variable name and value
+  hosts: localhost
+  tasks:
+    - name: read from arguments
+      ansible.builtin.debug:
+        msg: "Hello {{person}}, good {{wishes}}"
+        
