@@ -1,0 +1,16 @@
+- name: conditions
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: check weather user exists or not
+      ansible.builtin.command: id expense
+      register: USER
+      ignore_errors: yes
+    
+    - name: checking the variable user
+      ansible.builtin.debug:
+        msg: "The value is : {{USER}}"
+      
+    - name: creating if the user not exists 
+      ansible.builtin.command: useradd expense
+      when: USER.rc != 0 #condition 
