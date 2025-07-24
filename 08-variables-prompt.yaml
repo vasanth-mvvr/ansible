@@ -2,7 +2,7 @@
   hosts: web
   vars_prompt:
     - name: USERNAME
-      prompt: please enter your password
+      prompt: please enter your username
       private: false
     - name: PASSWORD
       prompt: please enter your password
