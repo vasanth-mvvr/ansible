@@ -1,0 +1,10 @@
+- name: loops
+  hosts: web
+  tasks:
+  - name: loops
+    ansible.builtin.debug:
+      msg: "Hello {{list}}"
+    loop:
+    - mysql
+    - nginx
+    - postfix
