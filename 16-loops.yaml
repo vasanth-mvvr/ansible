@@ -8,3 +8,4 @@
     - mysql
     - nginx
     - postfix
+    - ansible
