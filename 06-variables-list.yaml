@@ -1,4 +1,4 @@
 variable: variables
 script: scripts
 file: files
-WISHES: wishes from variable files
+#WISHES: wishes from variable files
