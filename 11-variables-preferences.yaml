@@ -1,7 +1,7 @@
 - name: variables preferences
   hosts: localhost
   vars: 
-    WISHES: morning from tasks
+    WISHES: morning from play
   # vars_files:
   # - 06-variables-list.yaml
   vars_prompt:
