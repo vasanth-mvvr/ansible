@@ -10,7 +10,7 @@
       DevOps: 1 #number
       aws: 1
       docker: 1
-      project: true #boolean
+    project: true #boolean
   tasks:
     - name: print datatypes
       ansible.builtin.debug:
