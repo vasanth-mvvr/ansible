@@ -2,8 +2,8 @@
   hosts: localhost
   vars: 
     WISHES: morning from tasks
-  vars_files:
-  - 06-variables-list.yaml
+  # vars_files:
+  # - 06-variables-list.yaml
   vars_prompt:
   - name: Variables from prompt
     prompt: plese enter the wishes
