@@ -5,7 +5,7 @@
   # vars_files:
   # - 06-variables-list.yaml
   vars_prompt:
-  - name: Variables from prompt
+  - name: WISHES
     prompt: plese enter the wishes
     private: false
   tasks:  
