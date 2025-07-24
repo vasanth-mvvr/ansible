@@ -1,35 +1,20 @@
-# - name: variables preferences
-#   hosts: localhost
-#   vars: 
-#     WISHES: morning from tasks
-#   vars_files:
-#   - 06-variables-list.yaml
-#   vars_prompt:
-#   - name: Variables from prompt
-#     prompt: plese enter the wishes
-#     private: false
-#   tasks:  
-#   - name: variable preferences
-#     vars:
-#       WISHES: wishes from tasks
-#     ansible.builtin.debug:
-#       msg: "{{WISHES}}"
-- name: variable preference
+- name: variables preferences
   hosts: localhost
-  vars:
-    WISHES: "Morning from PLAY variable"
+  vars: 
+    WISHES: morning from tasks
   vars_files:
   - 06-variables-list.yaml
   vars_prompt:
-  - name: WISHES
-    prompt: Please enter Wishes
+  - name: Variables from prompt
+    prompt: plese enter the wishes
     private: false
-  tasks:
-  - name: check preference
-    vars:
-      WISHES: "Morning from TASK variable"
+  tasks:  
+  - name: variable preferences
+    # vars:
+    #   WISHES: wishes from tasks
     ansible.builtin.debug:
-      msg: "Hello, Good {{WISHES}}"
+      msg: "{{WISHES}}"
+
 
 # 1- arguments
 # 2- tasks
