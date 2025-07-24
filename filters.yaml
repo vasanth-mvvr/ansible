@@ -1,0 +1,77 @@
+- name: default variables
+  hosts: localhost
+  tasks:
+    - name: default values
+      ansible.builtin.debug:
+        msg: "Hello, I am learning {{course | default('ansible') }}"
+
+- name: unique values
+  hosts: localhost
+  vars:
+    numbers: [ 1, 2, 3, 3, 4, 3, 5, 5, 2 ]
+  tasks:
+    - name: unique numbers
+      ansible.builtin.debug:
+        msg: "The unique numbers are {{numbers | unique}}"
+
+- name: converting to upper
+  hosts: localhost
+  vars:
+    variable: hello good morning
+  tasks:
+    - name: conversion to upper
+      ansible.builtin.debug:
+        msg: "The conversion is {{variable | upper}}"
+      
+- name: converting to lower
+  hosts: localhost
+  vars:
+    variable: HELLO, GOOD MORNING.
+  tasks:
+    - name: conversion to lower
+      ansible.builtin.debug:
+        msg: "The conversion is  {{variable | lower}}"
+
+- name: min and max age
+  hosts: localhost
+  vars:
+    min_max: [ 20, 30, 60, 90, 2 ]
+  tasks:
+    - name: min and max
+      ansible.builtin.debug:
+        msg: "The min age is : {{min_max | min }}, the max age is : {{min_max | max }}"
+
+- name: converting items to dict
+  hosts: localhost
+  vars:
+    item_list:
+      course: DevOps
+      learning: ansible
+      experience: basic
+  tasks:
+    - name: Before conversion
+      ansible.builtin.debug:
+        msg: "Before conversion {{item_list}}"
+
+    - name: After conversion of items to dict
+      ansible.builtin.debug:
+        msg: "The conversion is {{ item_list | items2dict}}"
+
+- name: converting dict to item
+  hosts: localhost
+  vars:
+    dict_list:
+      - {'key': 'course', 'value': 'DevOps'}
+      - {'key': 'learning', 'value': 'ansible'}
+      - {'key': 'experience', 'value': 'basic'}
+  tasks:
+    - name: Before conversion
+      ansible.builtin.debug:
+        msg: "Before conversion {{dict_list}}"
+
+    - name: After conversion of items to dict
+      ansible.builtin.debug:
+        msg: "The conversion is {{ dict_list | dict2items}}"
+
+
+      
