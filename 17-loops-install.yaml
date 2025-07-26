@@ -1,0 +1,11 @@
+- name: loops for installing
+  hosts: web
+  tasks:
+  - name: loops
+    ansible.builtin.dnf:
+      name: "{{item.name}}"
+      state: "{{item.state}}"
+    loop:
+    - {name: 'mysql', state: 'latest' } #item
+    - {name: 'postfix', state: 'absent' }
+    - {name: 'nginx', state: 'absent' }
