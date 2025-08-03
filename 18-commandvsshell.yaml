@@ -1,0 +1,11 @@
+- name: command vs shell module
+  hosts: localhost
+  tasks:
+    - name: command module
+      ansible.builtin.command: " echo 'hi this is command module' >/tmp/command.txt"
+    - name: shell module
+      ansible.builtin.shell: " echo 'hi this is shell module' >/tmp/shell.txt"
+    
+#The difference between command and shell module is the command module is simple and straight forward it does not support pipe , redirections etc.
+#The shell module which supports redirections , pipes etc. it is supports complex commands
+#All command module can support shell modules but the viceversa is not possible
